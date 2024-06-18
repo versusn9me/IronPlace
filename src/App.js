@@ -68,8 +68,7 @@ const RootStack = () => {
     <Stack.Navigator screenOptions={options}>
       <Stack.Screen name="Home" component={Home}
         options={{ title: 'React-Native Ui', headerShown: true }} />
-      <Stack.Screen name="Tab1" component={AnimTab1} />
-      <Stack.Screen name="Tab2" component={AnimTab2} />
+      
       <Stack.Screen name="Tab3" component={AnimTab3} />
       <Stack.Screen name="Tab4" component={Tab4} />
       <Stack.Screen name="Tab5" component={Tab5} />
