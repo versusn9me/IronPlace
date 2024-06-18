@@ -5,12 +5,14 @@ import Icon, { Icons } from '../components/Icons';
 import Colors from '../constants/Colors';
 import ColorScreen from '../screens/ColorScreen';
 import * as Animatable from 'react-native-animatable';
+import ProductsList from '../screens/shop/ProductsList';
+import DetailsScreen from '../screens/shop/DetailsScreen';
 
 const TabArr = [
-  { route: 'Home', label: 'Home', type: Icons.Feather, icon: 'home', component: ColorScreen, color: Colors.primary, alphaClr: Colors.primaryAlpha },
-  { route: 'Search', label: 'Search', type: Icons.Feather, icon: 'search', component: ColorScreen, color: Colors.green, alphaClr: Colors.greenAlpha },
-  { route: 'Add', label: 'Add New', type: Icons.Feather, icon: 'plus-square', component: ColorScreen, color: Colors.red, alphaClr: Colors.redAlpha },
-  { route: 'Account', label: 'Account', type: Icons.FontAwesome, icon: 'user-circle-o', component: ColorScreen, color: Colors.purple, alphaClr: Colors.purpleAlpha },
+  { route: 'Главная', label: 'Главная', type: Icons.Feather, icon: 'home', component: ProductsList, color: Colors.primary, alphaClr: Colors.primaryAlpha },
+  { route: 'Поиск', label: 'Поиск', type: Icons.Feather, icon: 'search', component: ColorScreen, color: Colors.green, alphaClr: Colors.greenAlpha },
+  { route: 'Корзина', label: 'Корзина', type: Icons.Feather, icon: 'cart', component: ColorScreen, color: Colors.red, alphaClr: Colors.redAlpha },
+  { route: 'Профиль', label: 'Профиль', type: Icons.FontAwesome, icon: 'user-circle-o', component: ColorScreen, color: Colors.purple, alphaClr: Colors.purpleAlpha },
 ];
 
 const Tab = createBottomTabNavigator();

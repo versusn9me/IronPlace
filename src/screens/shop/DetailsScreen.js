@@ -55,6 +55,8 @@ const Quantity = () => {
   )
 }
 
+
+
 export default function DetailsScreen({ navigation, route }) {
   const { item } = route.params;
 

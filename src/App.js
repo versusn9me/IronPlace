@@ -15,12 +15,9 @@ import {
   StatusBar,
   useColorScheme,
 } from 'react-native';
-import AnimTab1 from './bottomTab/AnimTab1';
-import AnimTab2 from './bottomTab/AnimTab2';
 import AnimTab3 from './bottomTab/AnimTab3';
 import Home from './screens/Home';
-import Tab4 from './bottomTab/Tab4';
-import Tab5 from './bottomTab/Tab5';
+
 import Colors from './constants/Colors';
 import ContactList from './screens/ContactList';
 import ListScreen from './screens/ListScreen';
@@ -70,8 +67,7 @@ const RootStack = () => {
         options={{ title: 'React-Native Ui', headerShown: true }} />
       
       <Stack.Screen name="Tab3" component={AnimTab3} />
-      <Stack.Screen name="Tab4" component={Tab4} />
-      <Stack.Screen name="Tab5" component={Tab5} />
+     
       <Stack.Screen name="Contacts" component={ContactList} />
       <Stack.Screen name="List" component={ListScreen} />
       <Stack.Screen name="Screen" component={Screen} />
@@ -91,12 +87,12 @@ const RootStack = () => {
       />
       <Stack.Screen name="HeaderAnim2" component={HeaderAnim2}
         options={{
-          // gestureEnabled: false,
+           gestureEnabled: false,
         }}
       />
       <Stack.Screen name="HeaderAnim3" component={HeaderAnim3}
         options={{
-          // gestureEnabled: false,
+           gestureEnabled: false,
         }}
       />
     </Stack.Navigator>
@@ -104,3 +100,4 @@ const RootStack = () => {
 }
 
 export default App;
+
