@@ -15,22 +15,23 @@ import {
   StatusBar,
   useColorScheme,
 } from 'react-native';
-import AnimTab3 from './bottomTab/AnimTab3';
 import Home from './screens/Home';
 
 import Colors from './constants/Colors';
-import ContactList from './screens/ContactList';
-import ListScreen from './screens/ListScreen';
+
 import { Provider, MD2DarkTheme, DefaultTheme as PaperDefaultTheme } from 'react-native-paper';
-import Screen from './screens/Screen';
 import ProductsList from './screens/shop/ProductsList';
 import DetailsScreen from './screens/shop/DetailsScreen';
+import ConfirmEmail from './screens/profile/Authentification/ConfirmEmail';
+import ForgotPassword from './screens/profile/Authentification/ForgotPassword';
+import NewPassword from './screens/profile/Authentification/NewPassword';
+import SingInScrenn from './screens/profile/Authentification/SingIn';
+import SingUpScrenn from './screens/profile/Authentification/SingUp';
+import MainProfile from './screens/profile/MainProfile';
+import PList from './screens/shop/PList';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
-import Fab from './screens/fab/Fab';
-import DrawerNav1 from './screens/drawer/drawer1/DrawerNav1';
-import HeaderAnim1 from './screens/animHeaders/HeaderAnim1';
-import HeaderAnim2 from './screens/animHeaders/HeaderAnim2';
-import HeaderAnim3 from './screens/animHeaders/HeaderAnim3';
+import ProductDetails from './screens/shop/ProductDetails';
+import Tovar from './screens/shop/Tovar';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -64,36 +65,22 @@ const RootStack = () => {
   return (
     <Stack.Navigator screenOptions={options}>
       <Stack.Screen name="Home" component={Home}/>
-      
-      <Stack.Screen name="Tab3" component={AnimTab3} />
-     
-      <Stack.Screen name="Contacts" component={ContactList} />
-      <Stack.Screen name="List" component={ListScreen} />
-      <Stack.Screen name="Screen" component={Screen} />
+      <Stack.Screen name="ProductDetails" component={ProductDetails} />
       <Stack.Screen name="Products" component={ProductsList} />
+      <Stack.Screen name="PList" component={PList} />
       <Stack.Screen name="Details" component={DetailsScreen}
         options={{
           cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
         }}
       />
-      <Stack.Screen name="Fab" component={Fab} />
-      <Stack.Screen name="Drawer1" component={DrawerNav1} />
-
-      <Stack.Screen name="HeaderAnim1" component={HeaderAnim1}
-        options={{
-          gestureEnabled: Platform.OS === 'ios',
-        }}
-      />
-      <Stack.Screen name="HeaderAnim2" component={HeaderAnim2}
-        options={{
-           gestureEnabled: false,
-        }}
-      />
-      <Stack.Screen name="HeaderAnim3" component={HeaderAnim3}
-        options={{
-           gestureEnabled: false,
-        }}
-      />
+     <Stack.Screen name="ConfirmEmail" component={ConfirmEmail} />
+     <Stack.Screen name="Tovar" component={Tovar} />
+     <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+     <Stack.Screen name="NewPassword" component={NewPassword} />
+     <Stack.Screen name="SingInScrenn" component={SingInScrenn} />
+     <Stack.Screen name="SingUpScrenn" component={SingUpScrenn} />
+     <Stack.Screen name="MainProfile" component={MainProfile} />
+     <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
     </Stack.Navigator>
   )
 }

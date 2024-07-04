@@ -6,16 +6,46 @@ import Colors from '../constants/Colors';
 import ColorScreen from '../screens/ColorScreen';
 import * as Animatable from 'react-native-animatable';
 import ProductsList from '../screens/shop/ProductsList';
+import SingInScrenn from '../screens/profile/Authentification/SingIn';
+import SingUpScrenn from '../screens/profile/Authentification/SingUp';
+import MainProfile from '../screens/profile/MainProfile';
+import { createStackNavigator } from '@react-navigation/stack';
+import ConfirmEmail from '../screens/profile/Authentification/ConfirmEmail';
+import ForgotPassword from '../screens/profile/Authentification/ForgotPassword';
+import NewPassword from '../screens/profile/Authentification/NewPassword';
+import PList from '../screens/shop/PList';
 import DetailsScreen from '../screens/shop/DetailsScreen';
+import ProductDetails from '../screens/shop/ProductDetails';
 
 const TabArr = [
   { route: 'Главная', label: 'Главная', type: Icons.Feather, icon: 'home', component: ProductsList, color: Colors.primary, alphaClr: Colors.primaryAlpha },
-  { route: 'Поиск', label: 'Поиск', type: Icons.Feather, icon: 'search', component: ColorScreen, color: Colors.green, alphaClr: Colors.greenAlpha },
+  { route: 'Поиск', label: 'Поиск', type: Icons.Feather, icon: 'search', component: MainProfile, color: Colors.green, alphaClr: Colors.greenAlpha },
   { route: 'Корзина', label: 'Корзина', type: Icons.Feather, icon: 'shopping-cart', component: ColorScreen, color: Colors.red, alphaClr: Colors.redAlpha },
-  { route: 'Профиль', label: 'Профиль', type: Icons.FontAwesome, icon: 'user-circle-o', component: ColorScreen, color: Colors.purple, alphaClr: Colors.purpleAlpha },
+  { route: 'Профиль', label: 'Профиль', type: Icons.FontAwesome, icon: 'user-circle-o', component: ConfirmEmail, color: Colors.purple, alphaClr: Colors.purpleAlpha },
 ];
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+const ProfileStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false, 
+      }}
+    >
+      <Stack.Screen name="SingInScrenn" component={SingInScrenn} />
+      <Stack.Screen name="SingUpScrenn" component={SingUpScrenn} />
+      <Stack.Screen name="MainProfile" component={MainProfile} />
+      <Stack.Screen name="ConfirmEmail" component={ConfirmEmail} />
+      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+      <Stack.Screen name="NewPassword" component={NewPassword} />
+      <Stack.Screen name="PList" component={PList} />
+      <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
+      <Stack.Screen name="ProductDetails" component={ProductDetails} />
+    </Stack.Navigator>
+  );
+};
 
 const TabButton = (props) => {
   const { item, onPress, accessibilityState } = props;
@@ -55,7 +85,6 @@ const TabButton = (props) => {
     </TouchableOpacity>
   )
 }
-
 export default function AnimTab3() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -66,25 +95,29 @@ export default function AnimTab3() {
             height: 60,
             position: 'absolute',
             margin: 16,
-            borderRadius: 16
+            borderRadius: 16,
+            zIndex: 10
           }
         }}
       >
         {TabArr.map((item, index) => {
           return (
-            <Tab.Screen key={index} name={item.route} component={item.component}
+            <Tab.Screen 
+              key={index} 
+              name={item.route} 
+              component={item.route === 'Профиль' ? ProfileStack : item.component} // Изменено
               options={{
                 tabBarShowLabel: false,
                 tabBarButton: (props) => <TabButton {...props} item={item} />
               }}
             />
-          )
+          );
         })}
+        
       </Tab.Navigator>
     </SafeAreaView>
-  )
+  );
 }
-
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
