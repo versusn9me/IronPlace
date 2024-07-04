@@ -9,8 +9,12 @@ import bag8 from '../assets/images/products/bag8.png'
 import bag9 from '../assets/images/products/bag9.png'
 import bag10 from '../assets/images/products/bag10.png'
 import bag11 from '../assets/images/products/bag11.png'
+import Mat from '../assets/images/Category/Materials'
+
+
 
 export default {
+  Mat,
   bag1,
   bag2,
   bag3,

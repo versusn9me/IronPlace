@@ -63,8 +63,7 @@ const Stack = createSharedElementStackNavigator();
 const RootStack = () => {
   return (
     <Stack.Navigator screenOptions={options}>
-      <Stack.Screen name="Home" component={Home}
-        options={{ title: 'React-Native Ui', headerShown: true }} />
+      <Stack.Screen name="Home" component={Home}/>
       
       <Stack.Screen name="Tab3" component={AnimTab3} />
      

@@ -11,7 +11,7 @@ import DetailsScreen from '../screens/shop/DetailsScreen';
 const TabArr = [
   { route: 'Главная', label: 'Главная', type: Icons.Feather, icon: 'home', component: ProductsList, color: Colors.primary, alphaClr: Colors.primaryAlpha },
   { route: 'Поиск', label: 'Поиск', type: Icons.Feather, icon: 'search', component: ColorScreen, color: Colors.green, alphaClr: Colors.greenAlpha },
-  { route: 'Корзина', label: 'Корзина', type: Icons.Feather, icon: 'cart', component: ColorScreen, color: Colors.red, alphaClr: Colors.redAlpha },
+  { route: 'Корзина', label: 'Корзина', type: Icons.Feather, icon: 'shopping-cart', component: ColorScreen, color: Colors.red, alphaClr: Colors.redAlpha },
   { route: 'Профиль', label: 'Профиль', type: Icons.FontAwesome, icon: 'user-circle-o', component: ColorScreen, color: Colors.purple, alphaClr: Colors.purpleAlpha },
 ];
 
